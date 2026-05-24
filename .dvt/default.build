@@ -9,6 +9,7 @@
 +define+VIVADO
 +define+SYNTHESIS
 +define+XLEN_32
++define+SCOPE
 
 +incdir+hw/rtl
 +incdir+hw/rtl/libs

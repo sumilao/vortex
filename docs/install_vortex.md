@@ -1,20 +1,29 @@
 # Installing and Setting Up the Vortex Environment
 
-## Ubuntu 18.04, 20.04
+## Ubuntu
 
 1. Install the following dependencies:
 
    ```
-   sudo apt-get install build-essential zlib1g-dev libtinfo-dev libncurses5 uuid-dev libboost-serialization-dev libpng-dev libhwloc-dev
+   sudo apt-get install build-essential ccache zlib1g-dev libncurses-dev libncurses6 uuid-dev libboost-serialization-dev libpng-dev libhwloc-dev
    ```
 
-2. Upgrade GCC to 11:
+   On older Ubuntu releases, install `libncurses5` instead if `libncurses6` is not available or if prebuilt tools require the ncurses 5 runtime.
+
+2. Make sure GCC 11 or newer is installed:
+
+   ```
+   gcc --version
+   g++ --version
+   ```
+
+   If your GCC version is older than 11, install GCC 11:
 
    ```
    sudo apt-get install gcc-11 g++-11
    ```
 
-   Multiple gcc versions on Ubuntu can be managed with update-alternatives, e.g.:
+   Multiple GCC versions on Ubuntu can be managed with update-alternatives, e.g.:
 
    ```
    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
@@ -26,7 +35,7 @@
 3. Download the Vortex codebase:
 
    ```
-   git clone --depth=1 --recursive https://github.com/vortexgpgpu/vortex.git
+   git clone --depth=1 --recursive https://github.com/sumilao/vortex.git
    ```
 4. Build Vortex
 
@@ -47,7 +56,7 @@ Note: depending on the system, some of the toolchain may need to be recompiled f
 1. Install the following dependencies:
 
    ```
-   sudo yum install libpng-devel boost boost-devel boost-serialization libuuid-devel opencl-headers hwloc hwloc-devel gmp-devel compat-hwloc1
+   sudo yum install ccache libpng-devel boost boost-devel boost-serialization libuuid-devel opencl-headers hwloc hwloc-devel gmp-devel compat-hwloc1
    ```
 
 2. Upgrade GCC to 11:
@@ -65,7 +74,7 @@ Note: depending on the system, some of the toolchain may need to be recompiled f
 4. Download the Vortex codebase:
 
    ```
-   git clone --depth=1 --recursive https://github.com/vortexgpgpu/vortex.git
+   git clone --depth=1 --recursive https://github.com/sumilao/vortex.git
    ```
 
 5. Build Vortex
