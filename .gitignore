@@ -3,3 +3,9 @@
 *.cache
 *.code-workspace
 miscs/apptainer/vortex.sif
+
+# DVT generated logs/cache
+dvt_build.log
+.dvt.dvt_build.log/
+.dvt/.build_config_dict/
+.dvt/default.build.auto.*
